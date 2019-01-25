@@ -3,8 +3,12 @@
 ################################################################################
 
 init offset = -1
-
-
+init python:
+    config.overlay_screens.append("stats_screen")
+default show_stats = True
+style stats_text:
+    color "#fff"
+    outlines [(1,"#444",0,0)]
 ################################################################################
 ## Styles
 ################################################################################
@@ -212,6 +216,7 @@ screen choice(items):
             textbutton i.caption action i.action
 
 
+
 ## When this is true, menu captions will be spoken by the narrator. When false,
 ## menu captions will be displayed as empty buttons.
 define config.narrator_menu = True
@@ -235,10 +240,12 @@ style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
 
 
+
 ## Quick Menu screen ###########################################################
 ##
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
+
 
 screen quick_menu():
 
@@ -1507,8 +1514,3 @@ style slider_pref_vbox:
 style slider_pref_slider:
     variant "small"
     xsize 600
-
-
-
-
-
